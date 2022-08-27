@@ -1,0 +1,11 @@
+.site{
+background-color: #000000;
+}
+#teamgrid,ul{
+    align-items:center;
+}
+#teamgrid,ul,li{
+    align-items:center;
+    width: 200px;
+    height: 200px;
+}
