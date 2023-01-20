@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');/*IMPORTS GOOGLE FONT FOR US TO USE**/
+
+:root{ /*CSS VARIABLES*/
+    --primary-color:  #047aed;
+}
+
+/**** DEFAULTS ****/
+/*create a reset. allows us to add padding and borders without adding to the width of an element*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    ;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin:10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%; /*keeps images within thier container*/
+}
+/**** END DEFAULTS ****/
+
+/* Navbar */
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover{
+    border-bottom: 2px #fff solid;
+}
+.navbar .flex{
+    justify-content: space-between;
+}
+
+/* Showcase */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative; /*for if you want to position anything absolute within you can*/
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow: visible;
+    grid-template-columns: 55% 45% ;
+    gap: 30px;
+}
+
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100; /*always in front*/
+
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;    
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+
+
+}
+.showcase-form input:focus{
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after{ /*PSEUDO-SELECTORS*/
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    /*prefix version for support on all browsers*/
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+/* Utilities */
+.container{
+    max-width: 1100px;
+    margin: 0 auto; /* 0 for top & bottom, auto for left and right*/
+    overflow: auto; /*gets rid of white space above*/
+    padding: 0 40px;
+}
+
+.card{
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-outline{
+    background-color: transparent;
+    border: 1px #fff solid;
+}
+
+.btn:hover{
+    transform: scale(0.98);
+}
+
+.flex{
+    display: flex;
+   justify-content: space-between; /*FLEXBOX LEARN THIS*/
+   align-items: center;
+   height: 100%;
+}
+
+.grid{ /*for displaying the text and form side-by side*/
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
