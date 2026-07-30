@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legend — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for Legend, the local-first networking app by Unjaded Digital Products. Your contacts stay on your device; no ads, no trackers, no selling data.">
+  <link rel="icon" type="image/png" href="legend-icon.png">
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="legend.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="lg-topbar">
+    <div class="container">
+      <a href="about.html" class="brand">
+        <img src="legend-icon.png" alt="Legend logo">
+        <span>Legend</span>
+      </a>
+      <a class="back" href="about.html">&larr; About Legend</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="policy">
+      <h1>Legend — Privacy Policy</h1>
+      <p class="updated">Effective date: July 30, 2026 &middot; Published by Unjaded Digital Products, LLC</p>
+
+      <p>
+        Legend is a personal networking app that helps you own your contacts, gauge how
+        strong and fresh each relationship is, and act on it. This policy explains what
+        Legend accesses, what it does and does not do with your information, and the
+        control you have. Legend is built <strong>local-first</strong>: your data lives on
+        your device by default.
+      </p>
+
+      <div class="short">
+        <strong>The short version</strong>
+        <ul>
+          <li>Your contacts and relationship data are stored <strong>on your device</strong>.</li>
+          <li>Legend does <strong>not</strong> sell your data, show ads, or embed third-party advertising or analytics trackers.</li>
+          <li>Legend only accesses your contacts, location, or photos <strong>with your permission</strong>, and only to do the thing you asked for.</li>
+          <li>You can <strong>export everything</strong> to CSV anytime, and <strong>delete</strong> your data and account from inside the app.</li>
+        </ul>
+      </div>
+
+      <h2>Information Legend accesses (only with your permission)</h2>
+      <ul>
+        <li><strong>Contacts.</strong> If you choose to import from your phone's address book, Legend reads the names, phone numbers, and emails you import so it can add them as contacts. Imported contacts are stored on your device. Legend does not upload your address book to us.</li>
+        <li><strong>Location.</strong> When you add a new contact, Legend may request your location <strong>once, while you are using the app</strong>, to pre-fill "where you met." It is used only to fill that field on the contact you are creating; it is not tracked in the background, and it is not shared.</li>
+        <li><strong>Photos.</strong> If you set a profile or contact avatar, Legend accesses only the specific image you select.</li>
+        <li><strong>Notifications.</strong> If you enable reminders, your device registers a push token so Legend can send you notifications.</li>
+      </ul>
+      <p>You can decline any of these permissions and still use the rest of the app; you can change them anytime in your device Settings.</p>
+
+      <h2>Information you provide</h2>
+      <ul>
+        <li><strong>Account details.</strong> To sign in you provide an email and password. In the current release Legend runs against an on-device account store, so these stay on your device. If you enable optional cloud sync in a future release, your account and encrypted data would be stored with our backend provider (Supabase) solely to sync your own devices &mdash; never sold or shared.</li>
+        <li><strong>Contact and relationship data</strong> you enter &mdash; names, companies, notes, how you met, and the interactions you log &mdash; is stored on your device.</li>
+      </ul>
+
+      <h2>How Legend uses information</h2>
+      <p>Only to provide the app's features: showing and searching your contacts, computing relationship "grades," building circles, and helping you reach people. Grades are computed on your device from the interactions you log.</p>
+
+      <h2>Messaging and outreach</h2>
+      <p>When you send a text, email, or call from Legend, Legend hands off to your device's own Messages, Mail, or Phone app with the message pre-filled. <strong>You</strong> review and send it. Legend does not send messages on its own and does not transmit your message content to us.</p>
+
+      <h2>What Legend does not do</h2>
+      <ul>
+        <li>No selling or renting of your personal data.</li>
+        <li>No advertising and no third-party ad or analytics SDKs.</li>
+        <li>No background location tracking.</li>
+        <li>No uploading of your address book.</li>
+      </ul>
+
+      <h2>Data sharing</h2>
+      <p>We do not share your personal information with third parties, except:</p>
+      <ul>
+        <li><strong>Service providers</strong> strictly to run optional features you enable (e.g., cloud sync via Supabase, or in-app purchases via Apple). These providers process data only to provide their service.</li>
+        <li><strong>Legal requirements</strong>, if we are required by law to disclose information.</li>
+      </ul>
+
+      <h2>Your control</h2>
+      <ul>
+        <li><strong>Export.</strong> One-tap CSV export of your contacts and interaction history.</li>
+        <li><strong>Delete.</strong> Delete individual contacts, or delete your entire account and its data, from Settings inside the app.</li>
+      </ul>
+
+      <h2>Data retention</h2>
+      <p>Data stored on your device remains until you delete it or uninstall the app. If you enable cloud sync, synced data is retained until you delete your account.</p>
+
+      <h2>Children</h2>
+      <p>Legend is not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy as Legend evolves. Material changes will be reflected here with a new effective date.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy or your data: <a href="mailto:marlon.unjaded@gmail.com">marlon.unjaded@gmail.com</a> &mdash; Unjaded Digital Products, LLC.</p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="legend-icon.png" alt="Legend logo" style="height:28px;border-radius:6px;">
+        <span>Legend</span>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About Legend</a>
+        <a href="/">Unjaded Digital Products</a>
+        <a href="mailto:marlon.unjaded@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Unjaded Digital Products, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,3 +1,6 @@
 # Reference material (LinkedIn captures, settings screenshots) — not site assets
 images/refs/
 images/Screenshot*.png
+
+# Stray binaries that are not site assets
+*.exe
