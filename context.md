@@ -25,7 +25,9 @@ commit that added the current site.
   website development & administration; custom apps and games.
 - **Products in development:** Cave Boss (RPG), A Game of Robert's Rules (educational
   game for parliamentary procedure), Vendor Finder (connects people directly to vendors).
-- **Contact email:** marlon.unjaded@gmail.com
+- **Contact email:** marlon@unjaded.net (contact section + form delivery). The footer,
+  the Legend pages, and the privacy policy still point at marlon.unjaded@gmail.com —
+  decide whether those should move to the domain address too.
 - **LinkedIn:** https://www.linkedin.com/in/marloncopeland/
 
 ## Design decisions
@@ -36,11 +38,24 @@ commit that added the current site.
 - **Logo:** `images/UnjadedTwoColors.png` is the canonical mark.
   `images/UnjadedDPLogoType1.png` contains a typo ("DITGITAL PRODUCTS") — do not use it
   until fixed.
-- **No frameworks, no build step, no external requests** — system font stack, hand-written
-  CSS/JS. Anything in the repo root is what ships.
-- **Contact form** is `mailto:`-based (opens the visitor's mail client pre-addressed to
-  marlon.unjaded@gmail.com) because a static site has no server to send mail from.
-  See nextsteps.md for the planned upgrade.
+- **No frameworks, no build step** — system font stack, hand-written CSS/JS. Anything in
+  the repo root is what ships. The one outbound request is the contact form's POST.
+- **Contact form** (updated 2026-08-19) mirrors the structure and behavior of
+  brownicity.com/contact: First Name / Last Name (side by side), Email, Topic dropdown,
+  Message, "Submit". It posts JSON to FormSubmit's AJAX endpoint
+  (`https://formsubmit.co/ajax/marlon@unjaded.net`), so the page never reloads and the
+  message arrives as email — a static host has no server of ours to send from.
+  - **Delivery address is marlon@unjaded.net**, set once as `CONTACT_EMAIL` in
+    `scripts/site.js`; `FORM_ENDPOINT` is derived from it. Swapping to Formspree or
+    Web3Forms means changing those two lines and the JSON key names.
+  - **One-time activation:** the first real submission sends a confirmation email to
+    marlon@unjaded.net. Until that link is clicked, submissions are held rather than
+    delivered. This has NOT been done yet.
+  - Spam handling: an off-screen `_honey` honeypot field; bots that fill it get the
+    success message and nothing is sent. FormSubmit's own captcha is disabled
+    (`_captcha: "false"`) since captcha cannot render in an AJAX flow.
+  - If the POST fails, the error state offers a pre-filled `mailto:` link and leaves the
+    visitor's typed input in place, so a message is never silently lost.
 - **Page sections:** hero → trust bar → Services → Products → How We Work (process) →
   About the founder → Contact → footer. Mobile nav collapses to a hamburger under 640px.
 

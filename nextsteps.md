@@ -4,13 +4,22 @@ Improvements for the Unjaded Digital Products site, roughly in priority order.
 
 ## Contact experience
 
-- [ ] Replace the `mailto:` form with a real form backend (Formspree, FormSubmit, or a
-      small Azure Function) so submissions arrive by email without opening the visitor's
-      mail client. Keep the direct email link as a fallback.
-- [ ] Add a success/thank-you state after submission.
+- [x] Replace the `mailto:` form with a real form backend — now posts to FormSubmit's
+      AJAX endpoint, delivering to marlon@unjaded.net. The direct email link remains as a
+      fallback, and a pre-filled `mailto:` is offered if the POST fails.
+- [x] Add a success/thank-you state after submission (inline, no page reload).
+- [ ] **Activate the FormSubmit endpoint**: submit the live form once, then click the
+      confirmation link emailed to marlon@unjaded.net. Nothing is delivered until this is
+      done. Verify a test submission actually lands afterward.
+- [ ] Swap the plain address in `FORM_ENDPOINT` for the hashed alias FormSubmit issues
+      after activation, so marlon@unjaded.net is not sitting in the page source for
+      scrapers to harvest.
+- [ ] Decide whether the footer, Legend pages, and privacy policy should also move from
+      marlon.unjaded@gmail.com to marlon@unjaded.net (5 links; the contact section is
+      already switched).
+- [ ] Revisit spam volume after a few weeks. The honeypot catches naive bots; if junk gets
+      through, consider Web3Forms/Formspree with a real captcha, or a small Azure Function.
 - [ ] Optional: add a Calendly (or similar) "book a call" link for a lower-friction start.
-- [ ] Consider a business email on the domain (e.g. hello@unjaded.net) instead of Gmail —
-      reads more established on a consulting site.
 
 ## Visual proof of work
 

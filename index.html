@@ -282,24 +282,51 @@
         </p>
         <p class="contact-direct">
           Prefer email? Write to
-          <a href="mailto:marlon.unjaded@gmail.com">marlon.unjaded@gmail.com</a>
+          <a href="mailto:marlon@unjaded.net">marlon@unjaded.net</a>
         </p>
       </div>
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="field-row">
+          <label>
+            First Name
+            <input type="text" name="firstName" required autocomplete="given-name" placeholder="First name">
+          </label>
+          <label>
+            Last Name
+            <input type="text" name="lastName" required autocomplete="family-name" placeholder="Last name">
+          </label>
+        </div>
         <label>
-          Your Name
-          <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith">
+          Email
+          <input type="email" name="email" required autocomplete="email" placeholder="you@company.com">
         </label>
         <label>
-          Your Email
-          <input type="email" name="email" required autocomplete="email" placeholder="jane@company.com">
+          Topic
+          <select name="topic" required>
+            <option value="" selected disabled>Select a subject</option>
+            <option>SharePoint Solutions &amp; Intranet Management</option>
+            <option>Microsoft Data Management</option>
+            <option>Small Business Web Development</option>
+            <option>Custom Apps &amp; Games</option>
+            <option>Legend (Beta)</option>
+            <option>Something Else</option>
+          </select>
         </label>
         <label>
-          What can we help with?
-          <textarea name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
+          Message
+          <textarea name="message" rows="6" required placeholder="Tell us what you're trying to build, fix, or grow..."></textarea>
         </label>
-        <button type="submit" class="btn">Send Message</button>
-        <p class="form-note">This opens your email app with your message ready to send.</p>
+
+        <!-- Spam trap: real people never see this, bots fill it in. -->
+        <div class="hp-field" aria-hidden="true">
+          <label>
+            Leave this field empty
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+
+        <button type="submit" class="btn" id="contact-submit">Submit</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
